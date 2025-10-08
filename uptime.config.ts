@@ -73,7 +73,7 @@ const workerConfig: WorkerConfig = {
      {
       id: 'gitea',
       name: 'gitea',
-      method: 'POST',
+      method: 'GET',
       target: 'https://gitea.keldo.uk',
       statusPageLink: 'https://gitea.keldo.uk',
       hideLatencyChart: false,
