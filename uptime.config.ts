@@ -79,6 +79,24 @@ const workerConfig: WorkerConfig = {
       hideLatencyChart: false,
       expectedCodes: [200],
     },
+    {
+      id: 'passbolt',
+      name: 'passbolt',
+      method: 'GET',
+      target: 'https://passbolt.keldo.uk',
+      statusPageLink: 'https://passbolt.keldo.uk',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+    },
+    {
+      id: 'immich',
+      name: 'immich',
+      method: 'GET',
+      target: 'https://immich.keldo.uk',
+      statusPageLink: 'https://immich.keldo.uk',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+    },
   ],
   notification: {
     // [Optional] apprise API server URL
