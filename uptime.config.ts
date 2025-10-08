@@ -13,7 +13,7 @@ const pageConfig: PageConfig = {
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    'Homelab': ['vault', 'gitea'],
+    'Homelab': ['vault', 'gitea', 'passbolt', 'immich'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
