@@ -13,7 +13,7 @@ const pageConfig: PageConfig = {
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    'Homelab': ['foo_monitor'],
+    'Homelab': ['vault'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
@@ -35,7 +35,7 @@ const workerConfig: WorkerConfig = {
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'vault',
       // `name` is used at status page and callback message
       name: 'vault',
       // `method` should be a valid HTTP Method
@@ -85,7 +85,7 @@ const workerConfig: WorkerConfig = {
     // if not specified, notification will be sent immediately
     gracePeriod: 5,
     // [Optional] disable notification for monitors with specified ids
-    skipNotificationIds: ['foo_monitor', 'bar_monitor'],
+    skipNotificationIds: ['vault', 'bar_monitor'],
   },
   callbacks: {
     onStatusChange: async (
@@ -122,7 +122,7 @@ const workerConfig: WorkerConfig = {
 const maintenances: MaintenanceConfig[] = [
   {
     // [Optional] Monitor IDs to be affected by this maintenance
-    monitors: ['foo_monitor', 'bar_monitor'],
+    monitors: ['vault', 'bar_monitor'],
     // [Optional] default to "Scheduled Maintenance" if not specified
     title: 'Test Maintenance',
     // Description of the maintenance, will be shown at status page
@@ -152,7 +152,7 @@ const maintenances: MaintenanceConfig[] = [
 
       schedules.push({
         title: `${year}/${parseInt(month)} - Test scheduled maintenance`,
-        monitors: ['foo_monitor'],
+        monitors: ['vault'],
         body: 'Monthly scheduled maintenance',
         start: `${year}-${month}-15T02:00:00.000+08:00`,
         end: `${year}-${month}-15T04:00:00.000+08:00`,
