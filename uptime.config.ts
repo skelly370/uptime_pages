@@ -143,7 +143,7 @@ const workerConfig: WorkerConfig = {
 // Of course, you can leave it empty if you don't need this feature
 // const maintenances: MaintenanceConfig[] = []
 const maintenances: MaintenanceConfig[] = [
-  {
+  //{
     // [Optional] Monitor IDs to be affected by this maintenance
     //monitors: ['vault', 'bar_monitor'],
     // [Optional] default to "Scheduled Maintenance" if not specified
@@ -157,7 +157,7 @@ const maintenances: MaintenanceConfig[] = [
     //end: '2025-04-30T00:00:00+08:00',
     // [Optional] color of the maintenance alert at status page, default to "yellow"
     //color: 'blue',
-  },
+  //},
   // As this config file is a TypeScript file, you can even use IIFE to generate scheduled maintenances
   // The following example shows a scheduled maintenance from 2 AM to 4 AM on the 15th of every month (UTC+8)
   // This COULD BE DANGEROUS, as generating too many maintenance entries can lead to performance problems
