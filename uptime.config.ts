@@ -13,7 +13,7 @@ const pageConfig: PageConfig = {
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    'Homelab': ['vault'],
+    'Homelab': ['vault', 'gitea'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
@@ -70,6 +70,15 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
       checkProxyFallback: true,
     },
+     {
+      id: 'gitea',
+      name: 'gitea',
+      method: 'POST',
+      target: 'https://gitea.keldo.uk',
+      statusPageLink: 'https://gitea.keldo.uk',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+    },
   ],
   notification: {
     // [Optional] apprise API server URL
@@ -78,11 +87,7 @@ const workerConfig: WorkerConfig = {
     // [Optional] recipient URL for apprise, refer to https://github.com/caronc/apprise
     // if not specified, no notification will be sent
     recipientUrl: 'tgram://bottoken/ChatID',
-    // [Optional] timezone used in notification messages, default to "Etc/GMT"
-    timeZone: 'Asia/Shanghai',
-    // [Optional] grace period in minutes before sending a notification
-    // notification will be sent only if the monitor is down for N continuous checks after the initial failure
-    // if not specified, notification will be sent immediately
+    timeZone: 'Europe/London',
     gracePeriod: 5,
     // [Optional] disable notification for monitors with specified ids
     skipNotificationIds: ['vault', 'bar_monitor'],
