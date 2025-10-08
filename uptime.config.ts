@@ -13,7 +13,7 @@ const pageConfig: PageConfig = {
   // If not specified, all monitors will be shown in a single list
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
-    'Homelab': ['foo_monitor', 'bar_monitor', 'more monitor ids...'],
+    'Homelab': ['vault'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
@@ -35,7 +35,7 @@ const workerConfig: WorkerConfig = {
     // Example HTTP Monitor
     {
       // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
+      id: 'vault',
       // `name` is used at status page and callback message
       name: 'vault',
       // `method` should be a valid HTTP Method
@@ -53,16 +53,9 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
       timeout: 10000,
       // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
       // [OPTIONAL] body to be sent
-      body: 'Hello, world!',
       // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
-      responseKeyword: 'success',
       // [OPTIONAL] if specified, the response must NOT contains the keyword to be considered as operational.
-      responseForbiddenKeyword: 'bad gateway',
       // [OPTIONAL] if specified, will call the check proxy to check the monitor, mainly for geo-specific checks
       // refer to docs https://github.com/lyc8503/UptimeFlare/wiki/Check-proxy-setup before setting this value
       // currently supports `worker://` and `http(s)://` proxies
