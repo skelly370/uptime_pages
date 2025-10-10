@@ -102,10 +102,10 @@ const workerConfig: WorkerConfig = {
       id: 'google',
       name: 'google',
       method: 'GET',
-      target: 'https://google.com',
-      statusPageLink: 'https://google.com',
+      target: 'https://www.google.com/generate_204',
+      statusPageLink: 'https://www.google.com/generate_204',
       hideLatencyChart: false,
-      expectedCodes: [200],
+      expectedCodes: [204],
     },
   ],
   notification: {
