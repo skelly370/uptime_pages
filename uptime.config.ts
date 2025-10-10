@@ -14,6 +14,7 @@ const pageConfig: PageConfig = {
   // If specified, monitors will be grouped and ordered, not-listed monitors will be invisble (but still monitored)
   group: {
     'Homelab': ['vault', 'gitea', 'passbolt', 'immich'],
+    'Benchmark': ['google'],
   },
   // [OPTIONAL] Set the path to your favicon, default to '/favicon.ico' if not specified
   favicon: '/favicon.ico',
@@ -97,6 +98,15 @@ const workerConfig: WorkerConfig = {
       hideLatencyChart: false,
       expectedCodes: [200],
     },
+        {
+      id: 'google',
+      name: 'google',
+      method: 'GET',
+      target: 'https://google.com',
+      statusPageLink: 'https://google.com',
+      hideLatencyChart: false,
+      expectedCodes: [200],
+    },
   ],
   notification: {
     // [Optional] apprise API server URL
@@ -108,7 +118,7 @@ const workerConfig: WorkerConfig = {
     timeZone: 'Europe/London',
     gracePeriod: 5,
     // [Optional] disable notification for monitors with specified ids
-    skipNotificationIds: ['vault', 'bar_monitor'],
+    skipNotificationIds: [],
   },
   callbacks: {
     onStatusChange: async (
