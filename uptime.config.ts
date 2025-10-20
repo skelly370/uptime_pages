@@ -177,7 +177,7 @@ const maintenances: MaintenanceConfig[] = [
     const schedules = [];
     const today = new Date();
 
-    for (let i = -1; i <= 1; i++) {
+    for (let i = 1; i <= 1; i++) {
       // JavaScript's Date object will automatically handle year rollovers
       const date = new Date(today.getFullYear(), today.getMonth() + i, 15); 
       const year = date.getFullYear();
