@@ -185,7 +185,7 @@ const maintenances: MaintenanceConfig[] = [
 
       schedules.push({
         title: `${year}/${parseInt(month)} - Test scheduled maintenance`,
-        monitors: ['vault'],
+        monitors: [],
         body: 'Monthly scheduled maintenance',
         start: `${year}-${month}-15T02:00:00.000+08:00`,
         end: `${year}-${month}-15T04:00:00.000+08:00`,
